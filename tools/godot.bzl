@@ -6,17 +6,22 @@ _GODOT_URLS = {
     "macos": {
         "url": "https://github.com/godotengine/godot/releases/download/{version}/Godot_v{version}_macos.universal.zip",
         "binary_path": "Godot.app/Contents/MacOS/Godot",
-        "strip_prefix": "",
     },
     "linux_x86_64": {
         "url": "https://github.com/godotengine/godot/releases/download/{version}/Godot_v{version}_linux.x86_64.zip",
         "binary_path": "Godot_v{version}_linux.x86_64",
-        "strip_prefix": "",
     },
     "linux_arm64": {
         "url": "https://github.com/godotengine/godot/releases/download/{version}/Godot_v{version}_linux.arm64.zip",
         "binary_path": "Godot_v{version}_linux.arm64",
-        "strip_prefix": "",
+    },
+    "windows_x86_64": {
+        "url": "https://github.com/godotengine/godot/releases/download/{version}/Godot_v{version}_win64.exe.zip",
+        "binary_path": "Godot_v{version}_win64.exe",
+    },
+    "windows_arm64": {
+        "url": "https://github.com/godotengine/godot/releases/download/{version}/Godot_v{version}_windows_arm64.exe.zip",
+        "binary_path": "Godot_v{version}_windows_arm64.exe",
     },
 }
 
@@ -31,6 +36,11 @@ def _get_platform(repository_ctx):
             return "linux_arm64"
         else:
             return "linux_x86_64"
+    elif "windows" in os_name or "win" in os_name:
+        if arch == "aarch64" or arch == "arm64":
+            return "windows_arm64"
+        else:
+            return "windows_x86_64"
     else:
         fail("Unsupported OS: {}".format(os_name))
 
