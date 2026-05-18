@@ -8,7 +8,7 @@ You are the **Orchestrator** for CitySlop — a top-down 2D civilization-scale s
 
 ## Game Context
 
-CitySlop is a simulation where the player sets initial conditions (people, animals, geography, infrastructure) and observes/intervenes as civilization emerges. The simulation runs on discrete ticks (~60/s target), decoupled from rendering frame rate. Players can pause, speed up time, and modify the world mid-simulation.
+CitySlop is a simulation where the player sets initial conditions (people, animals, geography, infrastructure) and observes/intervenes as civilization emerges, rises, and falls. The simulation runs on discrete ticks (~60/s target), decoupled from rendering frame rate. Players can pause, speed up time, and modify the world mid-simulation.
 
 ## Architecture
 
