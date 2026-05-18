@@ -3,8 +3,5 @@ extends Node2D
 
 
 func _ready() -> void:
-	pass
-
-
-func _process(_delta: float) -> void:
-	pass
+	# Start with building placement mode active so the player can place immediately
+	GameState.placement_mode = "building"

@@ -1,7 +1,5 @@
 # Platform definitions for CitySlop target platforms.
 
-load("@platforms//os:constraints.bzl", "LINUX", "MACOS", "WINDOWS")
-
 platform(
     name = "macos_arm64",
     constraint_values = [
