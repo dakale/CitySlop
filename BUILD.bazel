@@ -1,0 +1,54 @@
+# Root BUILD file for CitySlop
+
+load("@rules_shell//shell:sh_binary.bzl", "sh_binary")
+
+sh_binary(
+    name = "cityslop",
+    srcs = ["tools/run_game.sh"],
+    data = [
+        ":godot_project",
+        "@godot//:godot_bin_path.txt",
+        "@godot//:godot_files",
+    ],
+)
+
+filegroup(
+    name = "godot_project",
+    srcs = [
+        "icon.svg",
+        "project.godot",
+    ] + glob(
+        [
+            "scenes/**/*.tscn",
+            "scenes/**/*.tres",
+            "scripts/**/*.gd",
+            "assets/**",
+        ],
+        allow_empty = True,
+    ),
+    visibility = ["//visibility:public"],
+)
+
+filegroup(
+    name = "scenes",
+    srcs = glob(
+        [
+            "scenes/**/*.tscn",
+            "scenes/**/*.tres",
+        ],
+        allow_empty = True,
+    ),
+    visibility = ["//visibility:public"],
+)
+
+filegroup(
+    name = "scripts",
+    srcs = glob(["scripts/**/*.gd"]),
+    visibility = ["//visibility:public"],
+)
+
+filegroup(
+    name = "assets",
+    srcs = glob(["assets/**"]),
+    visibility = ["//visibility:public"],
+)

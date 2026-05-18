@@ -1,0 +1,16 @@
+# Godot
+.godot/
+*.import
+
+# Bazel
+/bazel-*
+/MODULE.bazel.lock
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+*.swp
+*.swo
+*~

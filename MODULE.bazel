@@ -1,0 +1,9 @@
+module(
+    name = "cityslop",
+    version = "0.1.0",
+)
+
+bazel_dep(name = "rules_shell", version = "0.6.1")
+
+godot = use_extension("//:tools/godot.bzl", "godot")
+use_repo(godot, "godot")
