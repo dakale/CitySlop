@@ -3,13 +3,31 @@
 load("@rules_shell//shell:sh_binary.bzl", "sh_binary")
 
 sh_binary(
-    name = "cityslop",
+    name = "cityslop_unix",
     srcs = ["tools/run_game.sh"],
     data = [
         ":godot_project",
         "@godot//:godot_bin_path.txt",
         "@godot//:godot_files",
     ],
+)
+
+sh_binary(
+    name = "cityslop.bat",
+    srcs = ["tools/run_game.bat"],
+    data = [
+        ":godot_project",
+        "@godot//:godot_bin_path.txt",
+        "@godot//:godot_files",
+    ],
+)
+
+alias(
+    name = "cityslop",
+    actual = select({
+        "@platforms//os:windows": ":cityslop.bat",
+        "//conditions:default": ":cityslop_unix",
+    }),
 )
 
 filegroup(

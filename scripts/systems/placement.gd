@@ -7,12 +7,12 @@ const CELL_SIZE: int = 64
 
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("place_entity") and GameState.placement_mode != "":
+	if event.is_action_pressed("place_entity") and PlacementState.placement_mode != "":
 		var mouse_pos := get_global_mouse_position()
 		var cell := Vector2i(
 			floori(mouse_pos.x / CELL_SIZE),
 			floori(mouse_pos.y / CELL_SIZE)
 		)
-		GameState.place_entity(cell, GameState.placement_mode)
+		PlacementState.place_entity(cell, PlacementState.placement_mode)
 	elif event.is_action_pressed("toggle_simulation"):
-		GameState.toggle_simulation()
+		SimulationClock.toggle_simulation()

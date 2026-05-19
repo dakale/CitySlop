@@ -4,4 +4,4 @@ extends Node2D
 
 func _ready() -> void:
 	# Start with building placement mode active so the player can place immediately
-	GameState.placement_mode = "building"
+	PlacementState.placement_mode = "building"

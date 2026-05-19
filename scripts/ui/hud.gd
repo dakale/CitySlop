@@ -10,7 +10,7 @@ extends Control
 func _ready() -> void:
 	GameState.resources_changed.connect(_on_resources_changed)
 	GameState.tick_processed.connect(_on_tick_processed)
-	GameState.simulation_toggled.connect(_on_simulation_toggled)
+	SimulationClock.simulation_toggled.connect(_on_simulation_toggled)
 	_sim_button.pressed.connect(_on_sim_button_pressed)
 	_update_display()
 
@@ -18,8 +18,8 @@ func _ready() -> void:
 func _update_display() -> void:
 	_resource_label.text = "Resources: %d" % GameState.resources
 	_tick_label.text = "Tick: %d" % GameState.tick_count
-	_status_label.text = "RUNNING" if GameState.simulation_running else "PAUSED"
-	_sim_button.text = "Pause" if GameState.simulation_running else "Start"
+	_status_label.text = "RUNNING" if SimulationClock.simulation_running else "PAUSED"
+	_sim_button.text = "Pause" if SimulationClock.simulation_running else "Start"
 
 
 func _on_resources_changed(_amount: int) -> void:
@@ -35,4 +35,4 @@ func _on_simulation_toggled(_running: bool) -> void:
 
 
 func _on_sim_button_pressed() -> void:
-	GameState.toggle_simulation()
+	SimulationClock.toggle_simulation()

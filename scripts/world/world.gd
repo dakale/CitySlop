@@ -12,7 +12,7 @@ var _entity_nodes: Dictionary = {}  # Vector2i -> ColorRect
 
 
 func _ready() -> void:
-	GameState.entity_placed.connect(_on_entity_placed)
+	PlacementState.entity_placed.connect(_on_entity_placed)
 	GameState.tick_processed.connect(_on_tick_processed)
 
 
@@ -40,6 +40,6 @@ func _on_tick_processed(_tick: int) -> void:
 	# Pulse entities based on age
 	for cell: Vector2i in _entity_nodes:
 		var rect: ColorRect = _entity_nodes[cell]
-		var age: int = GameState.entities[cell]["age"]
+		var age: int = PlacementState.entities[cell]["age"]
 		var t := clampf(float(age) / 20.0, 0.0, 1.0)
 		rect.color = ENTITY_COLOR.lerp(ENTITY_AGED_COLOR, t)

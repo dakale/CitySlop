@@ -69,6 +69,8 @@ toggle_simulation={
 [autoload]
 
 GameState="*res://scripts/autoload/game_state.gd"
+PlacementState="*res://scripts/autoload/placement_state.gd"
+SimulationClock="*res://scripts/autoload/simulation_clock.gd"
 
 [rendering]
 

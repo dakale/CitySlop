@@ -12,7 +12,7 @@ func _ready() -> void:
 	_timer.one_shot = false
 	_timer.timeout.connect(_on_tick)
 	add_child(_timer)
-	GameState.simulation_toggled.connect(_on_simulation_toggled)
+	SimulationClock.simulation_toggled.connect(_on_simulation_toggled)
 
 
 func _on_simulation_toggled(running: bool) -> void:
@@ -24,6 +24,6 @@ func _on_simulation_toggled(running: bool) -> void:
 
 func _on_tick() -> void:
 	# Age all placed entities
-	for cell: Vector2i in GameState.entities:
-		GameState.entities[cell]["age"] += 1
+	for cell: Vector2i in PlacementState.entities:
+		PlacementState.entities[cell]["age"] += 1
 	GameState.advance_tick()
