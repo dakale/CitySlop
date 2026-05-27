@@ -4,7 +4,7 @@
 
 # Bazel
 /bazel-*
-/MODULE.bazel.lock
+# /MODULE.bazel.lock
 
 # OS
 .DS_Store
