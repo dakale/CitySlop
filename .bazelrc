@@ -1,6 +1,5 @@
 # Common flags
 common --enable_bzlmod
-common --lockfile_mode=error
 
 # Build flags
 build --verbose_failures

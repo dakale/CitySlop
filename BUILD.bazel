@@ -22,6 +22,16 @@ sh_binary(
     ],
 )
 
+sh_binary(
+    name = "godot4",
+    srcs = ["tools/godot4"],
+    data = [
+        ":godot_project",
+        "@godot//:godot_bin_path.txt",
+        "@godot//:godot_files",
+    ],
+)
+
 alias(
     name = "cityslop",
     actual = select({

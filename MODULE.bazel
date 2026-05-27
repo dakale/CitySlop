@@ -6,8 +6,12 @@ module(
 bazel_dep(name = "platforms", version = "1.0.0")
 bazel_dep(name = "rules_shell", version = "0.6.1")
 
+# External tools
 godot = use_extension("//:tools/godot.bzl", "godot")
-buildifier = use_extension("//:tools/buildifier.bzl", "buildifier")
-
-use_repo(buildifier, "buildifier")
 use_repo(godot, "godot")
+
+buildifier = use_extension("//:tools/buildifier.bzl", "buildifier")
+use_repo(buildifier, "buildifier")
+
+starpls = use_extension("//:tools/starpls.bzl", "starpls")
+use_repo(starpls, "starpls")

@@ -4,7 +4,7 @@
 
 # Bazel
 /bazel-*
-# /MODULE.bazel.lock
+/MODULE.bazel.lock
 
 # OS
 .DS_Store
@@ -14,3 +14,4 @@ Thumbs.db
 *.swp
 *.swo
 *~
+.vscode/
