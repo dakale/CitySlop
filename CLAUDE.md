@@ -21,13 +21,13 @@ Screenshots land at `/tmp/cityslop_screen.png`.
 
 ## Session setup
 
-`tools/setup.sh` runs automatically via the `SessionStart` hook. It handles:
+`.claude/setup.sh` runs automatically via the `SessionStart` hook. It handles:
 - Installing Bazelisk and symlinking `bazel` → `bazelisk`
 - Downloading the correct Bazel version (from GitHub, since `releases.bazel.build` is blocked in this environment) and serving it on a local mirror at `http://localhost:19999`
 - Importing the Anthropic TLS-inspection proxy CA cert into the Bazel JVM truststore (needed because `bcr.bazel.build` traffic is intercepted)
 - Starting Xvfb on `:99` for headless rendering
 
-If anything looks broken, re-run `bash tools/setup.sh` manually.
+If anything looks broken, re-run `bash .claude/setup.sh` manually.
 
 ## Environment constraints
 

@@ -2,7 +2,7 @@
   "hooks": {
     "SessionStart": [
       {
-        "command": "bash tools/setup.sh"
+        "command": "bash .claude/setup.sh"
       }
     ]
   }
