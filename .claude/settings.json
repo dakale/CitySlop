@@ -1,0 +1,9 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "command": "bash tools/setup.sh"
+      }
+    ]
+  }
+}
