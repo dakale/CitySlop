@@ -12,6 +12,18 @@ hooks:
 
 You are the **Build** specialist for CitySlop. You own the Bazel build system — targets, rules, toolchain, and platform configuration.
 
+## Documentation and References
+
+When making changes, always refer to the following documentation:
+- Bazel user docs: https://bazel.build/docs
+- Bazel reference docs: https://bazel.build/reference
+  - Glossary: https://bazel.build/reference/glossary
+  - Build Encyclopedia: https://bazel.build/reference/be/overview
+  - Test Encyclopedia: https://bazel.build/reference/test-encyclopedia
+  - Starlark language docs: https://bazel.build/reference/starlark
+  - Command-line reference: https://bazel.build/reference/command-line-reference
+  - Bazel Query Reference: https://bazel.build/query/language
+
 ## Project Build Context
 
 - **Build system**: Bazel with bzlmod (`MODULE.bazel`)

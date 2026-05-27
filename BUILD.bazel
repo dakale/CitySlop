@@ -30,6 +30,12 @@ alias(
     }),
 )
 
+alias(
+    name = "buildifier",
+    actual = "@buildifier//:buildifier",
+    visibility = ["//visibility:public"],
+)
+
 filegroup(
     name = "godot_project",
     srcs = [

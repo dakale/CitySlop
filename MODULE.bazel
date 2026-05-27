@@ -7,4 +7,7 @@ bazel_dep(name = "platforms", version = "0.0.10")
 bazel_dep(name = "rules_shell", version = "0.6.1")
 
 godot = use_extension("//:tools/godot.bzl", "godot")
+buildifier = use_extension("//:tools/buildifier.bzl", "buildifier")
+
+use_repo(buildifier, "buildifier")
 use_repo(godot, "godot")

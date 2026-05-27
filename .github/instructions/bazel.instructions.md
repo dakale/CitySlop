@@ -5,6 +5,16 @@ description: "Bazel build conventions for Godot project with bzlmod"
 
 # Bazel Conventions
 
+## Verify Changes
+
+When making changes to BUILD files, MODULE.bazel, or .bazelrc, always verify that the build works correctly by running:
+
+```bash
+bazel build //...
+```
+
+Run this command from the project root after every change to Bazel related files.
+
 ## Structure
 - Use bzlmod (`MODULE.bazel`) — no WORKSPACE file
 - Root `BUILD.bazel` defines top-level targets and filegroups

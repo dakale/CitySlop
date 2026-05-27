@@ -188,6 +188,19 @@
   },
   "selectedYankedVersions": {},
   "moduleExtensions": {
+    "//:tools/buildifier.bzl%buildifier": {
+      "general": {
+        "bzlTransitiveDigest": "3wYTNRZ5oYLffh00hpg6otPCabotouwKA8bDBjqLvCg=",
+        "usagesDigest": "0tclNJZev17UIB/e0U7lotEko/eBiPGJaklnwjJRTa8=",
+        "recordedInputs": [],
+        "generatedRepoSpecs": {
+          "buildifier": {
+            "repoRuleId": "@@//:tools/buildifier.bzl%buildifier_repository",
+            "attributes": {}
+          }
+        }
+      }
+    },
     "//:tools/godot.bzl%godot": {
       "general": {
         "bzlTransitiveDigest": "KyrcgePezsC1n97aKws6QX8mnu0Dqm5NGwOs9CegaoU=",
