@@ -69,7 +69,7 @@ buildifier_repository = repository_rule(
 )
 
 
-def _buildifier_extension_impl(module_ctx):
+def _buildifier_extension_impl(_module_ctx):
     buildifier_repository(name = "buildifier")
 
 

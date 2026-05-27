@@ -58,6 +58,9 @@ def _godot_repository_impl(repository_ctx):
         type = "zip",
     )
 
+    # Ensure the binary is executable (zip extraction does not preserve +x on all platforms)
+    repository_ctx.execute(["chmod", "+x", "godot_extracted/" + binary_path])
+
     # Write the binary path to a file so the run script can find it
     repository_ctx.file(
         "godot_bin_path.txt",
@@ -84,7 +87,7 @@ godot_repository = repository_rule(
     },
 )
 
-def _godot_extension_impl(module_ctx):
+def _godot_extension_impl(_module_ctx):
     godot_repository(name = "godot")
 
 godot = module_extension(

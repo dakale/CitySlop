@@ -68,7 +68,7 @@ starpls_repository = repository_rule(
 )
 
 
-def _starpls_extension_impl(module_ctx):
+def _starpls_extension_impl(_module_ctx):
     starpls_repository(name = "starpls")
 
 
